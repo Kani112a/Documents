@@ -1,0 +1,84 @@
+What is an Operating System?
+An Operating System (OS) is system software that acts as an interface between the user and the computer hardware. It manages hardware resources and provides services to applications.
+Examples:
+Microsoft Windows
+Linux
+macOS
+Android
+
+Types of Operating Systems:
+| Type            | Example          |
+| --------------- | ---------------- |
+| Batch OS        | IBM Mainframe    |
+| Time Sharing OS | Unix             |
+| Distributed OS  | Cluster Systems  |
+| Real-Time OS    | Embedded Systems |
+| Network OS      | Windows Server   |
+| Mobile OS       | Android, iOS     |
+
+Kernel: The Kernel is the core part of an operating system. The kernel is the core component of a computer’s operating system. It acts as a bridge between your software applications and physical hardware. When an app needs to use the CPU, memory, or storage, it communicates with the kernel, which then translates those requests into hardware-level instructions.
+Responsibilities:
+CPU Management
+Memory Management
+Device Communication
+File System Management
+
+Types:
+Monolithic Kernel: Everything runs in kernel space.
+Example: Linux, Unix
+Advantages: 
+Fast
+Efficient
+
+Disadvantages: 
+Large kernel
+Bug affects entire system
+
+Microkernel: Only essential services remain in the kernel.
+Example: Minix, macOS
+
+Advantages:
+Secure
+Stable
+
+Disadvantages: 
+Slightly slower
+
+Thread (Very Important): 
+A thread is a single sequence stream within a process and is called a lightweight process because it is smaller and faster. It allows multiple tasks to run simultaneously, improving program efficiency.
+
+Multithreading:
+that allows a single process to be divided into multiple, concurrently executing units called threads.
+
+Scheduling:
+The OS decides which process gets CPU time.
+
+Types of Schedulers:
+Long-Term Scheduler (Job Scheduler): Loads programs from the hard disk into the main memory and controls the degree of multiprogramming.
+Short-Term Scheduler (CPU Scheduler): Selects processes from the ready queue and allocates the CPU to them. This runs frequently (milliseconds).
+Medium-Term Scheduler: Temporarily swaps processes out of memory and onto disk (e.g., during I/O waits) to free up space.
+
+Scheduling Categories:
+Preemptive: The OS can forcefully take the CPU away from a running process and assign it to another. (Better for high-priority or time-sharing systems).
+Non-Preemptive: A running process keeps the CPU until it finishes its task or switches to a waiting state.
+
+Common Scheduling Algorithms:
+First-Come, First-Served (FCFS): Processes are assigned the CPU in the exact order they arrive.
+Shortest Job First (SJF): The process with the shortest total CPU burst time is executed first.
+Round Robin (RR): Allocates a fixed time slice (time quantum) to each process in a cyclic order. Ideal for time-sharing systems.
+Priority Scheduling: Gives the CPU to the process with the highest priority.
+
+Context Switching:
+The CPU pauses a currently executing process, saves its exact state, and loads the saved state of the next process.
+
+Deadlock:
+A state where two or more processes are permanently blocked because each is waiting for a resource held by another.
+
+Four Conditions for Deadlock:
+Mutual Exclusion: Resources cannot be shared; only one process can use a resource at a time.
+Hold and Wait: A process is holding at least one resource while waiting to acquire additional resources held by other processes.
+No Preemption: Resources cannot be forcibly taken from a process; they can only be released voluntarily.
+Circular Wait: A closed chain of processes exists, where Process 1 is waiting for Process 2, Process 2 for Process 3, and so on, ending with a process waiting for Process 1.
+
+Starvation:
+Starvation (or indefinite blocking) occurs in priority scheduling when a low-priority process keeps waiting indefinitely because higher-priority processes continuously get the CPU.
