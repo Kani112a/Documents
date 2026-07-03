@@ -1,0 +1,182 @@
+Computer Network:
+A computer network is a collection of devices connected together to share resources and exchange data.
+Examples:
+Internet
+Office LAN
+Wi-Fi Network
+
+
+Types of Networks:
+| Type | Full Form                 | Range         |
+| ---- | ------------------------- | ------------- |
+| PAN  | Personal Area Network     | Few meters    |
+| LAN  | Local Area Network        | Office, Home  |
+| MAN  | Metropolitan Area Network | City          |
+| WAN  | Wide Area Network         | Country/World |
+
+
+OSI Model:
+The OSI model has 7 layers.
+| Layer          | Function                |
+| -------------- | ----------------------- |
+| 7 Application  | User applications       |
+| 6 Presentation | Encryption, Compression |
+| 5 Session      | Creates sessions        |
+| 4 Transport    | Reliable delivery       |
+| 3 Network      | Routing                 |
+| 2 Data Link    | MAC Address             |
+| 1 Physical     | Cables, Signals         |
+
+Top to Bottom: All People Seem To Need Data Processing
+Bottom to Top: Please Do Not Throw Sausage Pizza Away
+
+Why do we need OSI Model?
+It standardizes communication between different systems by dividing networking into seven independent layers.
+
+TCP/IP Model:
+Real-world Internet uses TCP/IP.
+| TCP/IP Layer   | OSI Equivalent                       |
+| -------------- | ------------------------------------ |
+| Application    | Application + Presentation + Session |
+| Transport      | Transport                            |
+| Internet       | Network                              |
+| Network Access | Data Link + Physical                 |
+
+IP Address:
+Every device connected to a network has an IP Address.
+Example: 192.168.1.10
+Purpose: To identify a device.
+
+IPv4:
+32 bits
+Example: 192.168.1.100
+
+IPv6:
+128 bits
+Example: 2001:db8::1
+Reason: IPv4 addresses are limited.
+
+MAC Address:
+Every network card has a unique physical address.
+Example: 00:1A:2B:3C:4D:5E
+IP can change.
+MAC never changes (normally).
+
+HTTP vs HTTPS:
+HTTP:
+Not secure
+Port 80
+
+HTTPS:
+Data is encrypted between browser and server.
+Encrypted
+SSL/TLS
+Port 443
+
+Ports:
+Ports identify applications running on a system.
+| Port | Protocol |
+| ---- | -------- |
+| 20   | FTP      |
+| 21   | FTP      |
+| 22   | SSH      |
+| 23   | Telnet   |
+| 25   | SMTP     |
+| 53   | DNS      |
+| 80   | HTTP     |
+| 110  | POP3     |
+| 143  | IMAP     |
+| 443  | HTTPS    |
+
+Control Flags (1 bit each):
+URG: Urgent data
+ACK: Acknowledgement valid
+PSH: Push data immediately
+RST: Reset connection
+SYN: Synchronize sequence numbers
+FIN: Terminate connection
+
+Three-Way Handshake:
+TCP Connection
+Client: SYN
+Server: SYN + ACK
+Client: ACK
+Connection established.
+Why Three-way Handshake?
+Ensures both client and server are ready before data transfer.
+
+Four-Way Handshake:
+Used for TCP connection termination.
+FIN
+ACK
+FIN
+ACK
+
+Routing:
+Routers send packets from one network to another.
+
+Example:    
+Your laptop
+↓
+Wi-Fi Router
+↓
+Internet
+↓
+Google Server
+
+Switch vs Hub vs Router:
+| Hub            | Switch           | Router            |
+| -------------- | ---------------- | ----------------- |
+| Broadcasts all | Smart forwarding | Connects networks |
+| Layer 1        | Layer 2          | Layer 3           |
+
+
+NAT: Network Address Translation
+One public IP
+↓
+Many private IPs
+Used in every Wi-Fi router.
+
+DHCP: Dynamic Host Configuration Protocol
+It is a network management protocol used to automatically assign IP addresses and other critical network settings (like subnet masks, default gateways, and DNS servers) to devices. This eliminates the need to manually configure IP addresses on every computer, smartphone, or printer that connects to a network.
+Automatically assigns IP addresses.
+Without DHCP
+You must manually configure IP.
+
+Proxy Server:
+Acts as an intermediary between client and server.
+Uses:
+Security
+Caching
+Content filtering
+
+Bandwidth vs Latency:
+Bandwidth is the volume of data that can be transferred over a network connection in a given amount of time (measured in Mbps or Gbps), while latency is the time it takes for a data packet to travel from its source to its destination (measured in milliseconds).
+Bandwidth: Amount of data transferred.
+Latency: Time taken for data to travel.
+
+Packet:
+Data sent over network is divided into packets.
+Each packet contains:
+Source IP
+Destination IP
+Payload
+
+Socket: Combination of IP Address + Port Number
+Example: 192.168.1.10:443
+
+Cookies vs Sessions:
+Cookie: Stored in browser.
+Session: Stored on server.
+
+CDN: Content Delivery Network
+
+Content Delivery Network (CDN) is a geographically distributed group of servers that accelerates internet content delivery by caching assets closer to end users. By routing requests to the nearest edge server, CDNs drastically reduce latency, decrease origin server load, and improve security against cyber threats.
+
+Stores website content in multiple locations.
+
+Benefits:
+Faster loading
+Reduced latency
+Better user experience
+
