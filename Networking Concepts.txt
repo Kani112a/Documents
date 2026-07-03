@@ -1,0 +1,166 @@
+DNS: Domain Name System
+Translating human-friendly domain names (like google.com) into machine-readable IP addresses (like 192.0.2.1).
+TLD Nameservers: Handle specific domain extensions like .com or .org.Authoritative Nameservers: Hold the exact IP address mapping for that specific website.
+
+TCP: Transmission Control Protocol
+It is a foundational internet protocol that ensures reliable, ordered, and error-free delivery of data between devices. It breaks data into packets, manages data rates to prevent network congestion, and resends lost packets to guarantee the message arrives exactly as sent.
+
+UDP: User Datagram Protocol
+UDP sends data quickly but without guaranteeing delivery, TCP prioritizes reliability over speed. UDP is generally preferred for real-time applications like live video streaming or gaming, where occasional packet loss is better than a delay.
+
+Firewall:
+A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules
+Internet
+↓
+Firewall
+
+↓
+Server
+Allow trusted traffic
+Block suspicious traffic
+Filter by IP, port, protocol, or application
+
+NAT: Network Address Translation
+NAT (Network Address Translation) is a networking technique used by routers to modify IP addresses while data is in transit. It allows multiple devices on a private local network to share a single public IP address to access the internet, effectively conserving limited IPv4 addresses and enhancing security.
+Each device has a private IP address, but your ISP usually gives you one public IP.
+The router uses NAT to translate between your private addresses and the single public address.
+Without NAT, every device would need its own public IP.
+
+
+ISP: Internet Service Provider
+It is an organization or company that provides you with access to the internet. By paying a subscription fee, you rent their network infrastructure to go online, browse websites, and stream content.
+Mobile Broadband: Uses cellular networks (such as 4G and 5G) to connect devices on the go.
+
+Forward & Reverse Proxy:
+Client -> Forward Proxy -> Internet -> Reverse Proxy -> Server
+A proxy sits between a group of clients and the internet. When a client makes a request, it goes to the proxy, which then fetches the data from the web server and returns it.
+A reverse proxy sits between the internet and one or more backend servers. When a user on the internet attempts to access a website, the reverse proxy intercepts the request first, then routes it to the appropriate internal server.
+
+Load Balancer:
+Suppose a shopping website receives more than 1L request ,One server can't handle all requests.The load balancer distributes requests across servers.
+
+Hub vs Switch vs Router:
+A hub connects multiple devices within a single network but broadcasts all data to every device, wasting bandwidth. A switch is a smarter, more efficient version that creates dedicated, direct connections between specific devices. A router connects multiple independent networks together and directs internet traffic to its destination.
+
+Hub:
+When data arrives at one port, the hub simply copies and broadcasts it to every other port it has. Every connected device receives the message, even if it wasn't intended for them.
+OSI Layer: Operates at Layer 1 (Physical Layer).
+
+Switch:
+A switch tracks the hardware identifiers (MAC addresses) of all connected devices. When it receives a data packet, it determines the exact intended recipient and sends the data only to that specific port, avoiding unnecessary broadcasts.
+OSI Layer: Operates at Layer 2 (Data Link Layer).
+
+Router:
+Routers use IP addresses rather than MAC addresses to understand where data packets need to go. It analyzes the destination IP, determines the most efficient path (much like a GPS), and forwards the data to the next network.
+OSI Layer: Operates at Layer 3 (Network Layer).
+
+MAC: Media Access Control
+MAC address is a unique 12-character physical identifier (e.g., 00:1A:2B:3C:4D:5E) assigned to a device's network adapter. Used for node-to-node communication within a local network, it differs from an IP address, which is used to route data across the wider internet.
+
+
+Final Working Process:
+You type https://example.com
+        │
+        ▼
+Browser
+        │
+        ▼
+DNS (Finds IP address)
+        │
+        ▼
+Router
+        │
+        ▼
+ISP
+        │
+        ▼
+Internet
+        │
+        ▼
+Firewall
+        │
+        ▼
+Load Balancer
+        │
+        ▼
+Reverse Proxy
+        │
+        ▼
+Web Server (ASP.NET)
+        │
+        ▼
+Application Logic
+        │
+        ▼
+PostgreSQL Database
+        │
+        ▼
+Response (HTML/JSON)
+        │
+        ▼
+Browser Displays Page
+
+
+
+
+API:
+API is simply a messenger between the client and the database.
+
+REST API
+REST means Representational State Transfer.
+
+Instead of: SELECT * FROM users
+
+Client sends: GET /users
+
+Server executes SQL
+
+Returns: JSON
+
+Example: GET /employee/5
+
+Response
+
+{
+  "id":5,
+  "name":"John",
+  "salary":50000
+}
+
+CRUD Mapping
+Database	REST
+SELECT		GET
+INSERT		POST
+UPDATE		PUT/PATCH
+DELETE		DELETE
+
+Why REST?
+
+Before REST,applications tightly coupled with databases.
+
+REST made applications:
+
+Platform Independent
+Lightweight
+Faster
+Easier to maintain
+
+JWT Authentication: JSON Web Token
+With the login beaarer token will get passed
+Now every request carries token.
+
+GET /profile
+Authorization
+Bearer Token
+Server verifies signature.If valid Access granted.
+
+JWT Structure
+Header,Payload,Signature
+
+Header:Algorithm,Type
+
+Payload: UserID,Role,Expiry,Claims
+
+Signature
+Generated using secret key.
+If payload changes,Signature becomes invalid.
